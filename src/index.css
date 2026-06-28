@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple global styles to give the dashboard a clean look */
+html, body, #root {
+  height: 100%;
+}
+body {
+  @apply bg-slate-900 text-white antialiased;
+}
+
+.card {
+  @apply bg-white/5 rounded-2xl p-4 shadow-md border border-white/10;
+}
+@import "tailwindcss";
