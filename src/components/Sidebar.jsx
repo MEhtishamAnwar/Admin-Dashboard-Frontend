@@ -2,7 +2,7 @@ import React from 'react'
 import { Sparkle, X, Crown, Rocket, Home, Users as UsersIcon, CreditCard, Settings as SettingsIcon } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
-export default function Sidebar() {
+export default function Sidebar({ mobileOpen, setMobileOpen }) {
   const links = [
     { to: '/dashboard', label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
     { to: '/users', label: 'Users', icon: <UsersIcon className="w-5 h-5" /> },
@@ -11,7 +11,7 @@ export default function Sidebar() {
   ]
 
   return (
-    <aside className="w-72 bg-white/5 border-r border-white/6 min-h-screen p-4 hidden md:block">
+    <aside className={`${mobileOpen ? 'translate-x-0' : '-translate-x-full'} fixed inset-y-0 left-0 z-50 w-72 bg-white/10 border-r border-white/10 min-h-screen p-4 shadow-2xl backdrop-blur-xl transition-transform duration-300 md:static md:translate-x-0 md:block`}>
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center">
           <Sparkle className="w-5 h-5 text-white" />
